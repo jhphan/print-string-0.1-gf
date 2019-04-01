@@ -122,7 +122,7 @@ exec_methods:
   - pipe:
     - run: echo
       args:
-      - value: '\"${STRING}\"'
+      - value: ${STRING}
     - run: tee
       args:
       - value: ${OUTPUT_FULL}
