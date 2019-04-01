@@ -1,0 +1,46 @@
+{
+  "name": "{{ agave.appsPrefix }}-print-string-0.1-gf",
+  "version": "0.1",
+  "label": "Print String",
+  "defaultNodeCount": 1,
+  "defaultMemoryPerNode": 1,
+  "defaultProcessorsPerNode": 1,
+  "executionType": "HPC",
+  "parallelism": "SERIAL",
+  "checkpointable": false,
+  "executionSystem": "{{ agave.executionSystem }}",
+  "deploymentPath": "{{ agave.appsDir }}/print-string-0.1-gf-0.1",
+  "deploymentSystem": "{{ agave.deploymentSystem }}",
+  "templatePath": "print-string-0.1-gf.sh",
+  "testPath": "test/test.sh",
+  "inputs": [
+    { "id": "input",
+      "value": {
+        "required": false,
+        "default": ""
+      }
+    }
+  ],
+  "parameters": [
+    { "id": "string",
+      "value": {
+        "required": false,
+        "default": "hello",
+        "type": "string"
+      }
+    },
+    { "id": "output",
+      "value": {
+        "required": true,
+        "type": "string"
+      }
+    },
+    { "id": "exec_method",
+      "value": {
+        "required": true,
+        "default": "auto",
+        "type": "string"
+      }
+    }
+  ]
+}

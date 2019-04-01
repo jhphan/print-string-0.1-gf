@@ -1,0 +1,32 @@
+%YAML 1.1
+---
+gfVersion: v1.0
+class: app
+
+name: print-string-0.1-gf
+description: Print String
+repo_uri: https://git.biotech.cdc.gov/geneflow-apps/print-string-0.1-gf.git
+version: '0.1'
+inputs:
+  input:
+    label: File
+    description: Dummy file input
+    type: File
+parameters:
+  string:
+    label: String
+    description: String to print
+    type: string
+    default: hello
+  output:
+    label: Output Text File
+    description: Output text file
+    type: File
+definition:
+{% if agave %}
+  agave:
+    agave_app_id: {{ agave.appsPrefix }}-print-string-0.1-gf-0.1{{ revision }}
+{% endif %}
+  local:
+    script: print-string-0.1-gf.sh
+...
