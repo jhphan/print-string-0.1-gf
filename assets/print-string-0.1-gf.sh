@@ -321,7 +321,7 @@ fi
 ## There should be one case statement for each item in $exec_methods
 case "${AUTO_EXEC}" in
     environment)
-        CMD=""; MNT=""; ARG=""; ARG="${ARG} ${STRING}"; CMD1="echo ${ARG}"; CMD="${CMD}${CMD1}"; MNT=""; ARG=""; ARG="${ARG} ${OUTPUT_FULL}"; CMD2="tee ${ARG}"; CMD="${CMD}|${CMD2}"; echo "CMD=${CMD}"; safeRunCommand "${CMD}"; 
+        CMD=""; MNT=""; ARG=""; ARG="${ARG} \"${STRING}\""; CMD1="echo ${ARG}"; CMD="${CMD}${CMD1}"; MNT=""; ARG=""; ARG="${ARG} \"${OUTPUT_FULL}\""; CMD2="tee ${ARG}"; CMD="${CMD}|${CMD2}"; echo "CMD=${CMD}"; safeRunCommand "${CMD}"; 
         ;;
 esac
 ## ***************************************************************** <<< MODIFY
